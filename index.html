@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Smile Designer - AI-Powered Smile Visualization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">😁</span>
+                <div>
+                    <h1>Virtual Smile Designer</h1>
+                    <p class="tagline">AI-Powered Smile Visualization</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Welcome Section -->
+        <section id="welcome-section" class="welcome-section">
+            <div class="welcome-content">
+                <h2>Transform Your Smile with AI Technology</h2>
+                <p>Upload a photo and see how different cosmetic dental procedures could enhance your smile. Our AI-powered tool provides realistic visualizations to help you make informed decisions.</p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">✨</span>
+                        <h3>Teeth Whitening</h3>
+                        <p>Visualize brighter, whiter teeth</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📐</span>
+                        <h3>Alignment</h3>
+                        <p>See straighter teeth alignment</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🦷</span>
+                        <h3>Gum Contouring</h3>
+                        <p>Adjust gum line appearance</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">💫</span>
+                        <h3>Complete Makeover</h3>
+                        <p>Apply preset smile designs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upload Section -->
+        <section id="upload-section" class="upload-section">
+            <div class="upload-container">
+                <div class="upload-zone" id="uploadZone">
+                    <div class="upload-content">
+                        <span class="upload-icon">📸</span>
+                        <h3>Upload Your Smile Photo</h3>
+                        <p>Drag and drop your photo here or click to browse</p>
+                        <p class="upload-hint">Supported formats: JPG, PNG (max 10MB)</p>
+                        <input type="file" id="fileInput" accept="image/jpeg,image/png" hidden>
+                        <button class="btn btn--primary" onclick="document.getElementById('fileInput').click()">Choose Photo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Editor Section -->
+        <section id="editor-section" class="editor-section" style="display: none;">
+            <div class="editor-layout">
+                <!-- Left Panel: Image Display -->
+                <div class="editor-left">
+                    <div class="image-container">
+                        <div class="canvas-wrapper">
+                            <canvas id="mainCanvas"></canvas>
+                            <canvas id="overlayCanvas"></canvas>
+                        </div>
+                        <div class="comparison-controls">
+                            <button class="btn btn--secondary" id="toggleComparison">
+                                <span id="comparisonLabel">Show Before</span>
+                            </button>
+                            <div class="comparison-slider-container" id="comparisonSliderContainer" style="display: none;">
+                                <input type="range" id="comparisonSlider" min="0" max="100" value="50" class="comparison-slider">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn btn--primary" id="downloadBtn">
+                            <span>📥</span> Download Design
+                        </button>
+                        <button class="btn btn--secondary" id="resetBtn">
+                            <span>↺</span> Reset
+                        </button>
+                        <button class="btn btn--outline" id="newPhotoBtn">
+                            <span>📸</span> New Photo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Panel: Controls -->
+                <div class="editor-right">
+                    <div class="controls-panel">
+                        <h3>Preset Smile Designs</h3>
+                        <div class="presets-grid" id="presetsGrid">
+                            <!-- Presets will be added by JavaScript -->
+                        </div>
+
+                        <h3>Custom Adjustments</h3>
+                        <div class="adjustments-container" id="adjustmentsContainer">
+                            <!-- Sliders will be added by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p>Processing your smile...</p>
+        </div>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success-message" style="display: none;">
+            <span class="success-icon">✓</span>
+            <span class="success-text">Design downloaded successfully!</span>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Virtual Smile Designer. For demonstration purposes only. Consult with a dental professional for actual treatment plans.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
